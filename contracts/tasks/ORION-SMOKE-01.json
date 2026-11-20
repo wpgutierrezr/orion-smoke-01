@@ -1,0 +1,74 @@
+{
+  "contract_version": 2,
+  "task_id": "ORION-SMOKE-01",
+  "repo": "wpgutierrezr/orion-smoke-01",
+  "issue": 1,
+  "objective": "Smoke test de extremo a extremo: comprobar la ruta real Hermes -> integrador -> wrapper -> OpenCode N1 -> evidencia, con una unica ejecucion y sin tocar la infraestructura productiva.",
+  "acceptance_criteria": [
+    "El wrapper completa una ejecucion real de OpenCode N1 con contrato verificado y limites efectivos 6/60/90/5.",
+    "state.json y events.jsonl registran contract_digest, effective_limits, route y model_id.",
+    "La evidencia del supervisor confirma terminacion sin supervivientes y limites coincidentes.",
+    "El worktree hermes/ORION-SMOKE-01 contiene solo los cambios declarados."
+  ],
+  "criteria": [
+    {
+      "id": "AC-1",
+      "criterion_index": 0,
+      "mode": "auto",
+      "command": [
+        "bash",
+        "-c",
+        "test \"$(cat smoke.txt)\" = \"orion-smoke-ok\""
+      ]
+    },
+    {
+      "id": "AC-2",
+      "criterion_index": 1,
+      "mode": "attestation",
+      "attestor": "wally"
+    },
+    {
+      "id": "AC-3",
+      "criterion_index": 2,
+      "mode": "attestation",
+      "attestor": "wally"
+    },
+    {
+      "id": "AC-4",
+      "criterion_index": 3,
+      "mode": "attestation",
+      "attestor": "wally"
+    }
+  ],
+  "policy": {
+    "opencode_steps": 6,
+    "timeout": 60,
+    "hard_timeout": 90,
+    "kill_grace": 5
+  },
+  "constraints": [
+    "Una sola ejecucion de OpenCode, sin reintentos automaticos.",
+    "Sin delegaciones ni escalado a otros modelos; ruta N1.",
+    "Sin cambios en la infraestructura productiva ni en el esquema contractual.",
+    "Sin merge; el cambio se entrega en rama de tarea y PR draft.",
+    "Sin acceso a secretos ni a repositorios corporativos."
+  ],
+  "mode": "cloud",
+  "owner": "orion-cloud",
+  "branch": "orion/ORION-SMOKE-01",
+  "base_sha": "8ae96cbfd5c131b888019bb883a86090cee640d6",
+  "model_route": "N1",
+  "status": "CLOUD_ACTIVE",
+  "next_action": "preflight y unica ejecucion autorizada",
+  "changes": [
+    "smoke.txt",
+    "README.md"
+  ],
+  "verification": [
+    [
+      "bash",
+      "-c",
+      "test \"$(cat smoke.txt)\" = \"orion-smoke-ok\""
+    ]
+  ]
+}
