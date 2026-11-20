@@ -1,0 +1,75 @@
+{
+  "contract_version": 2,
+  "task_id": "ORION-SMOKE-02",
+  "repo": "wpgutierrezr/orion-smoke-01",
+  "issue": 1,
+  "objective": "Crear el archivo smoke.txt con el contenido exacto orion-smoke-ok en la raiz del worktree y realizar unicamente los cambios declarados en este contrato. Implementa primero: la compuerta ya verifico repositorio, contrato, HEAD, rama, proveedor y limites, asi que no repitas exploracion del entorno ni del repositorio. Escribe el archivo, comprueba su contenido con la verificacion declarada e informa el resultado.",
+  "acceptance_criteria": [
+    "El archivo smoke.txt existe en la raiz del worktree con el contenido exacto orion-smoke-ok, comprobado por la verificacion declarada.",
+    "El supervisor confirma terminacion sin supervivientes y con limites efectivos 16/120/150/5 coincidentes con el contrato.",
+    "El worktree hermes/ORION-SMOKE-02 contiene unicamente smoke.txt como cambio.",
+    "No se modifico la infraestructura productiva, la configuracion global ni main."
+  ],
+  "criteria": [
+    {
+      "id": "AC-1",
+      "criterion_index": 0,
+      "mode": "auto",
+      "command": [
+        "bash",
+        "-c",
+        "printf 'orion-smoke-ok' | cmp -s - smoke.txt"
+      ]
+    },
+    {
+      "id": "AC-2",
+      "criterion_index": 1,
+      "mode": "attestation",
+      "attestor": "wally"
+    },
+    {
+      "id": "AC-3",
+      "criterion_index": 2,
+      "mode": "attestation",
+      "attestor": "wally"
+    },
+    {
+      "id": "AC-4",
+      "criterion_index": 3,
+      "mode": "attestation",
+      "attestor": "wally"
+    }
+  ],
+  "policy": {
+    "opencode_steps": 16,
+    "timeout": 120,
+    "hard_timeout": 150,
+    "kill_grace": 5
+  },
+  "constraints": [
+    "Una sola ejecucion de OpenCode, sin reintentos automaticos ni manuales.",
+    "Sin delegaciones ni escalado a otros modelos; ruta N1.",
+    "Implementa primero: no explotes el repositorio ni el entorno; la compuerta ya valido contrato, HEAD, rama, proveedor y limites.",
+    "Conserva las verificaciones legitimas de archivos y del resultado.",
+    "Sin merge; el cambio se entrega en rama de tarea y PR draft.",
+    "Sin acceso a secretos ni a repositorios corporativos."
+  ],
+  "mode": "cloud",
+  "owner": "orion-cloud",
+  "branch": "orion/ORION-SMOKE-02",
+  "base_sha": "b4eafe6a74ee1ca9aa1532a39f9720688e16f60c",
+  "model_route": "N1",
+  "status": "CLOUD_ACTIVE",
+  "next_action": "Correccion documental P2: verificacion estricta byte a byte. Sin nueva inferencia; la ejecucion N1 se realizo bajo el digest original y la evidencia de terminacion histórica permanece intacta.",
+  "changes": [
+    "smoke.txt"
+  ],
+  "verification": [
+    [
+      "bash",
+      "-c",
+      "printf 'orion-smoke-ok' | cmp -s - smoke.txt"
+    ]
+  ],
+  "evidence": []
+}

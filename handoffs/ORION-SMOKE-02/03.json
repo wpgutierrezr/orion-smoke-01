@@ -1,0 +1,47 @@
+{
+  "handoff_version": 1,
+  "task_id": "ORION-SMOKE-02",
+  "seq": 3,
+  "kind": "reconcile",
+  "from": {
+    "owner": "orion-cloud",
+    "platform": "cloud"
+  },
+  "to": {
+    "owner": "orion-cloud",
+    "platform": "cloud"
+  },
+  "prev_handoff_sha": "c9e52269c0ab010e488540cdeb227b307392674e",
+  "checkpoint_sha": "b4eafe6a74ee1ca9aa1532a39f9720688e16f60c",
+  "base_sha": "e1fd180e97a3af6bbfefdb6ff8cc090fc1890f7f",
+  "contract_digest": "sha256:1aa70b140ee4b91daf28f31560666322b1b67bd8961771d0dc0c8dc0057d00c3",
+  "closed_at": "2026-11-20T17:50:34Z",
+  "termination": {
+    "state": "verified",
+    "method": "manual-attestation",
+    "evidence": "supervisor:ORION-SMOKE-02-20261120T171718Z.json survivors=0 groups=3 pids=4",
+    "pids": [
+      {
+        "pid": 21013,
+        "start": "29237372"
+      },
+      {
+        "pid": 21023,
+        "start": "29237828"
+      },
+      {
+        "pid": 21033,
+        "start": "29237844"
+      },
+      {
+        "pid": 21013
+      }
+    ]
+  },
+  "operator": "wally",
+  "next_action": "Correccion documental P2: verificacion estricta byte a byte. Sin nueva inferencia; la ejecucion N1 se realizo bajo el digest original y la evidencia de terminacion histórica permanece intacta.",
+  "evidence_ref": {
+    "path": "/opt/data/.orion-state/ORION-SMOKE-02/evidence/ORION-SMOKE-02-20261120T171718Z.json",
+    "sha256": "f2a9c1f8232f90734cebeb517be31292dff551a32da7f64c62fd8ea776cd84b5"
+  }
+}
