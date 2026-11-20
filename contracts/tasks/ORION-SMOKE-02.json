@@ -18,7 +18,7 @@
       "command": [
         "bash",
         "-c",
-        "test \"$(cat smoke.txt)\" = \"orion-smoke-ok\""
+        "printf 'orion-smoke-ok' | cmp -s - smoke.txt"
       ]
     },
     {
@@ -68,7 +68,7 @@
     [
       "bash",
       "-c",
-      "test \"$(cat smoke.txt)\" = \"orion-smoke-ok\""
+      "printf 'orion-smoke-ok' | cmp -s - smoke.txt"
     ]
   ],
   "evidence": []
