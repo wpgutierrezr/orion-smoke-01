@@ -1,0 +1,22 @@
+{
+  "handoff_version": 1,
+  "task_id": "ORION-SMOKE-01",
+  "seq": 1,
+  "kind": "open",
+  "from": {
+    "owner": "orion-cloud",
+    "platform": "cloud"
+  },
+  "to": {
+    "owner": "orion-cloud",
+    "platform": "cloud"
+  },
+  "prev_handoff_sha": null,
+  "checkpoint_sha": "8ae96cbfd5c131b888019bb883a86090cee640d6",
+  "base_sha": "8ae96cbfd5c131b888019bb883a86090cee640d6",
+  "contract_digest": "sha256:35f37e979cd3ef3ee68c31ebe2113a270edbe3de05209341c3e4bf5a59f37852",
+  "closed_at": "2026-11-20T16:28:50Z",
+  "termination": null,
+  "operator": "wally",
+  "next_action": "preflight y unica ejecucion autorizada"
+}

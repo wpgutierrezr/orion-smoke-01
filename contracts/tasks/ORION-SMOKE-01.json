@@ -70,5 +70,6 @@
       "-c",
       "test \"$(cat smoke.txt)\" = \"orion-smoke-ok\""
     ]
-  ]
+  ],
+  "evidence": []
 }
