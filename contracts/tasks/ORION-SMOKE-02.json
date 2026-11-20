@@ -57,10 +57,10 @@
   "mode": "cloud",
   "owner": "orion-cloud",
   "branch": "orion/ORION-SMOKE-02",
-  "base_sha": "e1fd180e97a3af6bbfefdb6ff8cc090fc1890f7f",
+  "base_sha": "b4eafe6a74ee1ca9aa1532a39f9720688e16f60c",
   "model_route": "N1",
   "status": "CLOUD_ACTIVE",
-  "next_action": "Cierre documental y PR draft; merge pendiente de autorizacion humana.",
+  "next_action": "Correccion documental P2: verificacion estricta byte a byte. Sin nueva inferencia; la ejecucion N1 se realizo bajo el digest original y la evidencia de terminacion histórica permanece intacta.",
   "changes": [
     "smoke.txt"
   ],
